@@ -49,15 +49,21 @@ public class MainActivity extends AppCompatActivity {
             double to = 0.0f;
             double m = 0.0f;
 
-            if (s_from.equals("mm")) m = from / 1000.0f;
-            if (s_from.equals("cm")) m = from / 100.0f;
-            if (s_from.equals("m")) m = from;
-            if (s_from.equals("km")) m = from * 1000.0f;
+            switch (s_from)
+            {
+                case "mm": m = from / 1000.0f; break;
+                case "cm": m = from / 100.0f; break;
+                case "m": m = from; break;
+                case "km": m = from * 1000.0f; break;
+            }
 
-            if (s_to.equals("mm")) to = m * 1000.0f;
-            if (s_to.equals("cm")) to = m * 100.0f;
-            if (s_to.equals("m")) to = m;
-            if (s_to.equals("km")) to = m / 1000.0f;
+            switch (s_to)
+            {
+                case "mm": to = m * 1000.0f; break;
+                case "cm": to = m * 100.0f; break;
+                case "m": to = m; break;
+                case "km": to = m / 1000.0f; break;
+            }
 
             txt_to.setText(String.valueOf(to));
         }
